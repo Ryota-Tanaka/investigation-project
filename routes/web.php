@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/zoom', [Controllers\ZoomApiController::class, 'index'])->name('zoom.index');
+Route::post('/zoom/createWebinar', [Controllers\ZoomApiController::class, 'createWebinarUrl'])->name('zoom.createWebinar');
